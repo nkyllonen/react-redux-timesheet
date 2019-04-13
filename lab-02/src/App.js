@@ -6,6 +6,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+      {/* render our Projects Component */}
+      <Projects/>
       </div>
     );
   }
