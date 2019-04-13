@@ -5,7 +5,7 @@ class ProjectRow extends React.Component {
   // render: return JSX
   render() {
     // const reference to a prop named 'project'
-    const { project , key } = this.props;
+    const { project } = this.props;
     
     return (
       <tr>
@@ -19,8 +19,7 @@ class ProjectRow extends React.Component {
 
 // declare that this component expects a single prop named ‘project’
 ProjectRow.propTypes = {
-  project: PropTypes.object.isRequired,
-  key:     PropTypes.number
+  project: PropTypes.object.isRequired
 };
 
 // export the class we just built

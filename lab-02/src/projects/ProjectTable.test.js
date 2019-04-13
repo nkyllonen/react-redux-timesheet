@@ -9,7 +9,8 @@ describe('<ProjectTable />', () => {
 
   beforeEach(() => {
     // "stubbed" project entries
-    const projects = [{}, {}];
+    // each item that we pass into map() needs a unique key value --> _id
+    const projects = [{_id: 0}, {_id: 1}];
     wrapper = shallow(<ProjectTable projects={projects} />);
   });
 
