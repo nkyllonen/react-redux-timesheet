@@ -4,6 +4,17 @@ import { Button } from 'react-bootstrap';
 import { withRouter } from 'react-router';
 
 class EmployeeRow extends React.Component {
+  showDetail = () => {
+    const { history, employee } = this.props;
+     
+     if (employee.deleted) {
+       console.log('You cannot edit a deleted employee.');
+       return;
+     }
+  
+     history.push(`/employees/detail/${employee._id}`);
+  };
+
   handleClick = (event) => {
     const { employee, onDelete, onRestore } = this.props;
 
@@ -20,7 +31,7 @@ class EmployeeRow extends React.Component {
     const { employee } = this.props;
 
     return (
-      <tr className={employee.deleted ? 'deleted' : ''}>
+      <tr className={employee.deleted ? 'deleted' : ''} onClick={this.showDetail}>
         <td>{employee.username}</td>
         <td>{employee.email}</td>
         <td>{employee.firstName}</td>
